@@ -1,0 +1,190 @@
+{
+  "source_sha256": "340b33beeeabc215968f3f12fa74f14ebfd41668e95b01de3c9ee8d2aa995c30",
+  "base_sha256": "36e7ff84f196f7a485f4fd579c92d4ab06d1c71c81f77cba37e759c9c813325d",
+  "split_sha256": "67af84056586356449b2e3bfaa074606a3e0af6180297e53e4b9e7df8d714ac8",
+  "annotation_sha256": "f26135f71be2e910f18188532f74c43a10aca445a70fe7586592453d56f032a6",
+  "schedule_sha256": "1730d0ca1df9b7723713e316a09802a38be18e678248959f053d7b587d8c8255",
+  "device": {
+    "device_name": "Apple M5 Pro",
+    "max_recommended_working_set_size": 55662788608,
+    "memory_size": 68719476736,
+    "architecture": "applegpu_g17s",
+    "max_buffer_length": 41747087360,
+    "resource_limit": 499000
+  },
+  "mlx": "0.32.2",
+  "arms": {
+    "title": {
+      "seconds": 17.296911125071347,
+      "steps": 360,
+      "body_and_eos_tokens": 602164,
+      "sha256": "edbdae8a67a710e97b5dc51e97af3e70bb21c1e52724d6b4b9a0f2cf9b00f1dc",
+      "dev_choice_swap": {
+        "mean_gain": 0.0,
+        "positive": 0,
+        "rows": [
+          {
+            "index": 7,
+            "right_nll": 5.232805252075195,
+            "swap_nll": 5.232805252075195,
+            "gain": 0.0
+          },
+          {
+            "index": 8,
+            "right_nll": 4.616394996643066,
+            "swap_nll": 4.616394996643066,
+            "gain": 0.0
+          },
+          {
+            "index": 9,
+            "right_nll": 4.490683078765869,
+            "swap_nll": 4.490683078765869,
+            "gain": 0.0
+          },
+          {
+            "index": 37,
+            "right_nll": 6.01115608215332,
+            "swap_nll": 6.01115608215332,
+            "gain": 0.0
+          },
+          {
+            "index": 46,
+            "right_nll": 6.730256080627441,
+            "swap_nll": 6.730256080627441,
+            "gain": 0.0
+          },
+          {
+            "index": 50,
+            "right_nll": 4.731541633605957,
+            "swap_nll": 4.731541633605957,
+            "gain": 0.0
+          },
+          {
+            "index": 62,
+            "right_nll": 5.499267101287842,
+            "swap_nll": 5.499267101287842,
+            "gain": 0.0
+          },
+          {
+            "index": 64,
+            "right_nll": 4.106424331665039,
+            "swap_nll": 4.106424331665039,
+            "gain": 0.0
+          },
+          {
+            "index": 69,
+            "right_nll": 5.0765380859375,
+            "swap_nll": 5.0765380859375,
+            "gain": 0.0
+          },
+          {
+            "index": 76,
+            "right_nll": 5.908945560455322,
+            "swap_nll": 5.908945560455322,
+            "gain": 0.0
+          }
+        ]
+      },
+      "dev_plain": {
+        "other": {
+          "body_nll": 5.410885161336514,
+          "end_nll": 0.6931643605232238,
+          "poems": 320,
+          "tokens": 16204
+        },
+        "li": {
+          "body_nll": 5.130050183761969,
+          "end_nll": 1.1450930875890395,
+          "poems": 85,
+          "tokens": 5039
+        }
+      }
+    },
+    "plan": {
+      "seconds": 17.135669208015315,
+      "steps": 360,
+      "body_and_eos_tokens": 602164,
+      "sha256": "827646690b16025646532663f877b67d45bb4fd219b259202efd54620f7ec3bf",
+      "dev_choice_swap": {
+        "mean_gain": 0.08263974189758301,
+        "positive": 6,
+        "rows": [
+          {
+            "index": 7,
+            "right_nll": 6.035402774810791,
+            "swap_nll": 5.539047718048096,
+            "gain": -0.4963550567626953
+          },
+          {
+            "index": 8,
+            "right_nll": 5.326156139373779,
+            "swap_nll": 5.82120943069458,
+            "gain": 0.4950532913208008
+          },
+          {
+            "index": 9,
+            "right_nll": 4.855259418487549,
+            "swap_nll": 4.866457462310791,
+            "gain": 0.011198043823242188
+          },
+          {
+            "index": 37,
+            "right_nll": 5.73436164855957,
+            "swap_nll": 5.972487926483154,
+            "gain": 0.23812627792358398
+          },
+          {
+            "index": 46,
+            "right_nll": 6.574948310852051,
+            "swap_nll": 7.24264669418335,
+            "gain": 0.6676983833312988
+          },
+          {
+            "index": 50,
+            "right_nll": 4.480715751647949,
+            "swap_nll": 5.775302886962891,
+            "gain": 1.2945871353149414
+          },
+          {
+            "index": 62,
+            "right_nll": 6.055068492889404,
+            "swap_nll": 5.728359222412109,
+            "gain": -0.3267092704772949
+          },
+          {
+            "index": 64,
+            "right_nll": 5.246333122253418,
+            "swap_nll": 5.273789405822754,
+            "gain": 0.027456283569335938
+          },
+          {
+            "index": 69,
+            "right_nll": 6.051398754119873,
+            "swap_nll": 5.014071464538574,
+            "gain": -1.0373272895812988
+          },
+          {
+            "index": 76,
+            "right_nll": 6.654942512512207,
+            "swap_nll": 6.607612133026123,
+            "gain": -0.047330379486083984
+          }
+        ]
+      },
+      "dev_plain": {
+        "other": {
+          "body_nll": 5.417765425034906,
+          "end_nll": 0.6910851761698723,
+          "poems": 320,
+          "tokens": 16204
+        },
+        "li": {
+          "body_nll": 5.145234650197212,
+          "end_nll": 1.2947319816140568,
+          "poems": 85,
+          "tokens": 5039
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "wins": {
+    "tie": 13,
+    "512_before": 7,
+    "256": 4
+  },
+  "dimensions": {
+    "256": {
+      "emotion": {
+        "mean": 0.625,
+        "distribution": {
+          "1": 13,
+          "0": 10,
+          "2": 1
+        },
+        "both_seeds_at_2": []
+      },
+      "stance": {
+        "mean": 0.6666666666666666,
+        "distribution": {
+          "0": 8,
+          "1": 16
+        },
+        "both_seeds_at_2": []
+      },
+      "li_style": {
+        "mean": 0.7083333333333334,
+        "distribution": {
+          "1": 17,
+          "0": 7
+        },
+        "both_seeds_at_2": []
+      }
+    },
+    "512_before": {
+      "emotion": {
+        "mean": 0.7916666666666666,
+        "distribution": {
+          "1": 7,
+          "2": 6,
+          "0": 11
+        },
+        "both_seeds_at_2": [
+          "夜坐送潮聲"
+        ]
+      },
+      "stance": {
+        "mean": 0.5416666666666666,
+        "distribution": {
+          "1": 13,
+          "0": 11
+        },
+        "both_seeds_at_2": []
+      },
+      "li_style": {
+        "mean": 0.7083333333333334,
+        "distribution": {
+          "1": 17,
+          "0": 7
+        },
+        "both_seeds_at_2": []
+      }
+    },
+    "512_arc": {
+      "emotion": {
+        "mean": 0.5,
+        "distribution": {
+          "1": 12,
+          "0": 12
+        },
+        "both_seeds_at_2": []
+      },
+      "stance": {
+        "mean": 0.4166666666666667,
+        "distribution": {
+          "0": 14,
+          "1": 10
+        },
+        "both_seeds_at_2": []
+      },
+      "li_style": {
+        "mean": 0.7083333333333334,
+        "distribution": {
+          "1": 17,
+          "0": 7
+        },
+        "both_seeds_at_2": []
+      }
+    }
+  },
+  "same_topic_repeat": {
+    "夜坐送潮聲": "512_before"
+  },
+  "by_seed": {
+    "1": {
+      "tie": 6,
+      "512_before": 4,
+      "256": 2
+    },
+    "2": {
+      "tie": 7,
+      "512_before": 3,
+      "256": 2
+    }
+  },
+  "generation": {
+    "256": {
+      "at_sentence_end": 24,
+      "format_complete": 21,
+      "fixed_overlap8": 0,
+      "natural_overlap8": 0,
+      "total": 24
+    },
+    "512_before": {
+      "at_sentence_end": 24,
+      "format_complete": 22,
+      "fixed_overlap8": 0,
+      "natural_overlap8": 0,
+      "total": 24
+    },
+    "512_arc": {
+      "at_sentence_end": 24,
+      "format_complete": 24,
+      "fixed_overlap8": 0,
+      "natural_overlap8": 0,
+      "total": 24
+    }
+  }
+}

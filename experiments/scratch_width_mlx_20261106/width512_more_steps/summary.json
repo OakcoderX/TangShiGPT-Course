@@ -1,0 +1,133 @@
+{
+  "wins": {
+    "tie": 9,
+    "512_more": 7,
+    "256": 4,
+    "512_prior": 4
+  },
+  "dimensions": {
+    "256": {
+      "emotion": {
+        "mean": 0.5,
+        "distribution": {
+          "0": 15,
+          "1": 6,
+          "2": 3
+        },
+        "both_seeds_at_2": []
+      },
+      "stance": {
+        "mean": 0.5833333333333334,
+        "distribution": {
+          "1": 12,
+          "0": 11,
+          "2": 1
+        },
+        "both_seeds_at_2": []
+      },
+      "li_style": {
+        "mean": 0.8333333333333334,
+        "distribution": {
+          "0": 4,
+          "1": 20
+        },
+        "both_seeds_at_2": []
+      }
+    },
+    "512_prior": {
+      "emotion": {
+        "mean": 0.5,
+        "distribution": {
+          "1": 10,
+          "0": 13,
+          "2": 1
+        },
+        "both_seeds_at_2": []
+      },
+      "stance": {
+        "mean": 0.5,
+        "distribution": {
+          "1": 12,
+          "0": 12
+        },
+        "both_seeds_at_2": []
+      },
+      "li_style": {
+        "mean": 0.8333333333333334,
+        "distribution": {
+          "0": 5,
+          "1": 18,
+          "2": 1
+        },
+        "both_seeds_at_2": []
+      }
+    },
+    "512_more": {
+      "emotion": {
+        "mean": 0.875,
+        "distribution": {
+          "0": 9,
+          "2": 6,
+          "1": 9
+        },
+        "both_seeds_at_2": []
+      },
+      "stance": {
+        "mean": 0.625,
+        "distribution": {
+          "1": 13,
+          "0": 10,
+          "2": 1
+        },
+        "both_seeds_at_2": []
+      },
+      "li_style": {
+        "mean": 0.5833333333333334,
+        "distribution": {
+          "0": 11,
+          "1": 12,
+          "2": 1
+        },
+        "both_seeds_at_2": []
+      }
+    }
+  },
+  "same_topic_repeat": {},
+  "by_seed": {
+    "1": {
+      "tie": 6,
+      "512_more": 3,
+      "256": 1,
+      "512_prior": 2
+    },
+    "2": {
+      "512_prior": 2,
+      "256": 3,
+      "tie": 3,
+      "512_more": 4
+    }
+  },
+  "generation": {
+    "256": {
+      "at_sentence_end": 24,
+      "format_complete": 23,
+      "fixed_overlap8": 0,
+      "natural_overlap8": 0,
+      "total": 24
+    },
+    "512_prior": {
+      "at_sentence_end": 24,
+      "format_complete": 22,
+      "fixed_overlap8": 0,
+      "natural_overlap8": 0,
+      "total": 24
+    },
+    "512_more": {
+      "at_sentence_end": 24,
+      "format_complete": 23,
+      "fixed_overlap8": 0,
+      "natural_overlap8": 0,
+      "total": 24
+    }
+  }
+}

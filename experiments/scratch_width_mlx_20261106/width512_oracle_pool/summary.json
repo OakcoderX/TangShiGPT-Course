@@ -1,0 +1,226 @@
+{
+  "topics": [
+    {
+      "prompt": "夜雨赴江村",
+      "batches": [
+        {
+          "passing": 0,
+          "first_pass": false,
+          "best": {
+            "id": "1-09",
+            "topic": 1,
+            "batch": 1,
+            "draw": 2,
+            "seed": 198444,
+            "poem": "夜雨赴江村，人行獨不歸。野花開未落，江樹似秋微。",
+            "score": "110",
+            "reason": "獨行未歸略見孤意，末聯野花江樹未收回此人，似秋微拗。",
+            "passes": false
+          }
+        },
+        {
+          "passing": 0,
+          "first_pass": false,
+          "best": {
+            "id": "1-07",
+            "topic": 1,
+            "batch": 2,
+            "draw": 1,
+            "seed": 843745,
+            "poem": "夜雨赴江村，寒雲動山雪。征人過竹門，搖艇隔雲沒。",
+            "score": "101",
+            "reason": "過竹門到搖艇隱沒有可見的行動和去處，未寫出情緒。",
+            "passes": false
+          }
+        }
+      ],
+      "replicated": false
+    },
+    {
+      "prompt": "攜酒謝故人",
+      "batches": [
+        {
+          "passing": 1,
+          "first_pass": false,
+          "best": {
+            "id": "2-07",
+            "topic": 2,
+            "batch": 1,
+            "draw": 3,
+            "seed": 199470,
+            "poem": "攜酒謝故人，山花落秋草。客來不相逢，往事如流水。",
+            "score": "111",
+            "reason": "客帶酒到而不遇，景由落花轉回不可追回的往事，留住失落。",
+            "passes": true
+          }
+        },
+        {
+          "passing": 0,
+          "first_pass": false,
+          "best": {
+            "id": "2-11",
+            "topic": 2,
+            "batch": 2,
+            "draw": 3,
+            "seed": 844788,
+            "poem": "攜酒謝故人，登高若長安。西風吹遠思，南浦東南登。",
+            "score": "110",
+            "reason": "登高望遠有動作，風能帶出遠思；末句方向與重登失意。",
+            "passes": false
+          }
+        }
+      ],
+      "replicated": false
+    },
+    {
+      "prompt": "聞警夜登城",
+      "batches": [
+        {
+          "passing": 0,
+          "first_pass": false,
+          "best": {
+            "id": "3-01",
+            "topic": 3,
+            "batch": 1,
+            "draw": 1,
+            "seed": 200445,
+            "poem": "聞警夜登城，君詩接海中。山行逢道路，水隔與誰同。",
+            "score": "100",
+            "reason": "山行遇阻並問同伴，與聞警、登城、君詩連不起來。",
+            "passes": false
+          }
+        },
+        {
+          "passing": 0,
+          "first_pass": false,
+          "best": {
+            "id": "3-06",
+            "topic": 3,
+            "batch": 2,
+            "draw": 1,
+            "seed": 845763,
+            "poem": "聞警夜登城，聞歌憶故鄉。月開清曙色，天出白雲光。",
+            "score": "010",
+            "reason": "聞歌憶鄉有感情，但歌、告警及曙光沒有展開成事件。",
+            "passes": false
+          }
+        }
+      ],
+      "replicated": false
+    },
+    {
+      "prompt": "長風送我出柴關",
+      "batches": [
+        {
+          "passing": 0,
+          "first_pass": false,
+          "best": {
+            "id": "4-12",
+            "topic": 4,
+            "batch": 1,
+            "draw": 1,
+            "seed": 201454,
+            "poem": "長風送我出柴關，獨自孤燈雨夜山。天下不知天上夢，人間應是夢中還。",
+            "score": "011",
+            "reason": "孤燈和人間夢中還把雨夜出關收成孤旅，後續人物動作未寫出。",
+            "passes": false
+          }
+        },
+        {
+          "passing": 0,
+          "first_pass": false,
+          "best": {
+            "id": "4-09",
+            "topic": 4,
+            "batch": 2,
+            "draw": 2,
+            "seed": 846789,
+            "poem": "長風送我出柴關，白髮垂鞭不少顏。兩鬢已衰黃髮改，一生應用黑頭閑。",
+            "score": "110",
+            "reason": "白頭垂鞭可見一路行來的人，鬢衰有感；黑頭閑語意不穩。",
+            "passes": false
+          }
+        }
+      ],
+      "replicated": false
+    },
+    {
+      "prompt": "此身願爲故人行",
+      "batches": [
+        {
+          "passing": 0,
+          "first_pass": false,
+          "best": {
+            "id": "5-11",
+            "topic": 5,
+            "batch": 1,
+            "draw": 6,
+            "seed": 202548,
+            "poem": "此身願爲故人行，東去東西望水平。青草春風吹綠水，綠楊春水接青城。",
+            "score": "101",
+            "reason": "向東看水與春水接城能收住一路景色，沒有寫出為友的心緒。",
+            "passes": false
+          }
+        },
+        {
+          "passing": 0,
+          "first_pass": false,
+          "best": {
+            "id": "5-03",
+            "topic": 5,
+            "batch": 2,
+            "draw": 2,
+            "seed": 847798,
+            "poem": "此身願爲故人行，去謁孤峰駕海城。去馬依然淚沾襟，東流浮世不同行。",
+            "score": "110",
+            "reason": "去馬和淚滿襟有行程與惜別，駕海城稍拗，末句浮世不同行失所指。",
+            "passes": false
+          }
+        }
+      ],
+      "replicated": false
+    },
+    {
+      "prompt": "客散江樓月滿船",
+      "batches": [
+        {
+          "passing": 0,
+          "first_pass": false,
+          "best": {
+            "id": "6-10",
+            "topic": 6,
+            "batch": 1,
+            "draw": 1,
+            "seed": 203472,
+            "poem": "客散江樓月滿船，淺深重疊碧雲天。風波若與秋山淺，自作菱花不見年。",
+            "score": "001",
+            "reason": "風波雲山像船中遠景，菱花不見年難讀，無人物情緒或動作。",
+            "passes": false
+          }
+        },
+        {
+          "passing": 2,
+          "first_pass": false,
+          "best": {
+            "id": "6-12",
+            "topic": 6,
+            "batch": 2,
+            "draw": 2,
+            "seed": 848807,
+            "poem": "客散江樓月滿船，行人自有夜郎年。黃昏不語君相問，白髮無爲我自憐。",
+            "score": "111",
+            "reason": "離席後寫羈旅歲月，有人問而不答，末句落到白髮自憐。夜郎年稍硬，仍可讀為流寓時光。",
+            "passes": true
+          }
+        }
+      ],
+      "replicated": false
+    }
+  ],
+  "overlap8": {},
+  "first_draw_passes": 0,
+  "batches_with_pass": 2,
+  "passing_poems": 3,
+  "topics_replicated": 0,
+  "worth_selection_trial": false
+}

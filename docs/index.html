@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>从 microGPT 到唐诗 GPT · 动手课</title>
+<style>
+:root{--ink:#202f2b;--muted:#53625b;--paper:#f8f4e9;--white:#fffcf5;--red:#9c3929;--line:#d7cdb9;--dark:#233a33}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 system-ui,"PingFang SC","Microsoft YaHei",sans-serif}
+a{color:#225546;text-underline-offset:3px} a:hover{color:var(--red)} h1,h2,h3,p{margin:0 0 1rem} h1,h2{font-family:"Songti SC","Noto Serif CJK SC",SimSun,serif;font-weight:700;line-height:1.26}
+.hero{background:#eae2cd;border-bottom:1px solid var(--line)} .hero-inner{margin:auto;max-width:1150px;padding:3.8rem 2rem 3rem;display:grid;grid-template-columns:1.55fr .65fr;gap:4rem;align-items:center}
+.kicker,.eyebrow{color:var(--red);letter-spacing:.12em;font-size:.8rem;font-weight:750} h1{font-size:clamp(2.6rem,6vw,4.65rem);margin:.4rem 0 1.2rem} .lead{font-size:1.16rem;max-width:37em} .hero-links{margin-top:1.25rem;display:flex;gap:1.2rem;flex-wrap:wrap}
+figure{margin:0} .hero img{width:100%;max-height:350px;object-fit:contain;display:block} figcaption{font-size:.72rem;margin-top:.45rem;color:var(--muted);text-align:center}
+.layout{display:grid;grid-template-columns:205px minmax(0,1fr);gap:3rem;max-width:1150px;margin:auto;padding:2.7rem 2rem 5rem} nav{position:sticky;top:1rem;align-self:start} nav a{display:block;padding:.2rem 0;text-decoration:none;font-size:.87rem} nav a:hover{text-decoration:underline}
+section{padding:1.25rem 0 2.65rem;border-bottom:1px solid var(--line);scroll-margin-top:1rem} section+section{padding-top:2.3rem} h2{font-size:2.05rem;margin:.35rem 0 1rem} h3{font-size:1.05rem;margin-top:1.3rem} ul,ol{padding-left:1.4em;margin:0 0 1rem}
+code,pre{font-family:ui-monospace,SFMono-Regular,Consolas,monospace} p code,li code{background:#eee7d8;padding:.13em .26em;border-radius:3px;font-size:.9em;overflow-wrap:anywhere}
+pre{position:relative;margin:.75rem 0 1rem;background:var(--dark);color:#f5f1e4;padding:1rem;overflow:auto;border-radius:7px;font-size:.84rem;line-height:1.65} .codebox{position:relative}.copy{display:none;position:absolute;right:.4rem;top:.38rem;background:#eff2e8;color:#22362d;border:1px solid #a9b7a6;border-radius:4px;padding:.18rem .45rem;cursor:pointer}.js .copy{display:block}.codebox pre{padding-right:3.2rem}
+.callout,details{border-left:3px solid var(--red);background:#efe8d7;padding:.85rem 1rem;margin:1.15rem 0} .callout p,details p{margin:0} details summary{cursor:pointer;font-weight:650} details p{margin-top:.4rem}
+table{border-collapse:collapse;width:100%;margin:1rem 0;background:var(--white)}th,td{padding:.48rem .6rem;text-align:left;border-bottom:1px solid var(--line)}th{color:var(--dark)} .table-wrap{overflow:auto}
+footer{max-width:1150px;margin:auto;padding:1rem 2rem 2.5rem;color:var(--muted);font-size:.85rem}
+@media(max-width:760px){.hero-inner{grid-template-columns:1fr;padding:2rem 1.25rem;gap:1.25rem}.hero img{max-height:240px}.layout{display:block;padding:1.1rem 1.25rem 3rem}nav{position:static;border-bottom:1px solid var(--line);padding-bottom:1rem}nav a{display:inline-block;margin-right:.75rem} h2{font-size:1.7rem}}
+@media print{.hero-inner,.layout{display:block}.hero img,nav,.copy,.hero-links{display:none!important}body,.hero{background:white}pre{background:#eee;color:#111;white-space:pre-wrap} section{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="hero-inner">
+<div><p class="kicker">中文动手课 · 8 章 · 约 3 小时</p>
+<h1>从 microGPT<br>到唐诗 GPT</h1>
+<p class="lead">从《全唐诗》原始 JSON 出发，亲手训练一个能续写诗句的小模型。再用李白风格实验，学会检验一个模型有没有学到我们想要的东西。</p>
+<div class="hero-links"><a href="#start">开始实操</a><a href="TangShiGPT-课程.pptx">下载 PowerPoint</a><a href="../README.md">项目说明</a></div>
+</div>
+<figure><img src="assets/guangpuzhongli.jpg" alt="明代钟礼观瀑图，山间瀑布与临水人物"><figcaption>明 · 钟礼《观瀑图》 · <a href="https://www.metmuseum.org/art/collection/search/44703">大都会艺术博物馆</a></figcaption></figure>
+</div></header>
+<div class="layout">
+<nav aria-label="课程目录"><p class="eyebrow">课程目录</p>
+<a href="#start">课前 · 十分钟试写</a><a href="#data">01 · 清洗唐诗</a><a href="#tokens">02 · 字符与训练样本</a><a href="#gpt">03 · GPT 的计算</a><a href="#train">04 · 训练与保存</a><a href="#scale">05 · 层数与宽度</a><a href="#sample">06 · 生成与停笔</a><a href="#adapt">07 · 后训练与盲评</a><a href="#case">08 · 李白实验复盘</a><a href="#sources">来源与资料</a>
+</nav>
+<main>
+<section id="start"><p class="eyebrow">课前 · 10 分钟</p><h2>先让已经训练好的模型写一首</h2>
+<p>你只需要能运行几行 Python 命令。下载完整包后，在终端进入项目根目录。先装依赖，再加载已有权重。电脑没有 GPU 时也可以跑。</p>
+<pre><code>python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python -m tangshi generate --weights weights/more_2400_li.safetensors --form seven --prompt 江上送故人 --seed 42</code></pre>
+<p>Windows 的激活命令见 <a href="../README.md">README</a>。如果只下载了 GitHub 源码，从 Release 取权重放进 <code>weights/</code>。完整 ZIP 已附两份权重与词表。</p>
+<div class="callout"><p><strong>开场讨论</strong> · 一首四句都写满七字的作品，要通过什么检查，才会被你认作一首好诗？先写下答案，第 8 章再回来比较。</p></div>
+</section>
+<section id="data"><p class="eyebrow">01 · 数据清洗 · 20 分钟</p><h2>原始资料怎样变成训练文本</h2>
+<p>在原始 JSON 里，一条记录有作者、题名和分段正文。先拼正文，再按历史规则清掉夹注、校勘和过短残片。作者字段另外保留作李白筛选依据。</p>
+<pre><code>python scripts/prepare_data.py</code></pre>
+<p>项目实际使用的 58 个 <a href="../data/raw_manifest.json">原始 JSON 文件清单</a>有 57,607 条记录。提取有正文的记录得到 57,603 首，清洗后保留 56,937 首。项目随包提供的清洗文本可以用此命令逐字节重建。</p>
+<pre><code>清洗前  邏人（一作「叉」）橫鳥道，江祖出魚梁。
+清洗后  邏人橫鳥道，江祖出魚梁。</code></pre>
+<h3>练习</h3><p>打开 <a href="../scripts/clean_rules.py">清洗规则</a>，解释为什么 <code>[煙]</code> 会留下「煙」，较长的方括号内容会被删掉。找一条规则可能误删正文的情况。</p>
+<details><summary>参考答案</summary><p>单字方括号有可能是编者补字，历史规则保留。括号里的文字也可能是诗句的一部分，机械删除会误伤。发布数据时应保留原始快照，方便审计和改规则后重跑。</p></details>
+</section>
+<section id="tokens"><p class="eyebrow">02 · 字符与样本 · 18 分钟</p><h2>每个字都是一次预测目标</h2>
+<p>字符级模型把每个字和标点映射到整数。历史词表用排序后的字符编号，最后留一个起止标记。举例中把起、止写成两种显示名称，实际代码可复用同一个编号。</p>
+<pre><code>原序列   起 月 下 聞 松 止
+输入 x   起 月 下 聞 松
+目标 y   月 下 聞 松 止
+
+python scripts/next_char.py --char 月</code></pre>
+<p>频数程序只看眼前一个字，GPT 可以利用前面整个窗口。对同批不同长度的诗，填充位置只为凑整齐的张量，目标用 <code>-100</code> 屏蔽，真实的结束符仍参与训练。</p>
+<details><summary>练习与答案</summary><p>如果把所有起止标记都当作填充屏蔽，模型是否收到「该停笔」的正例？不会。历史版本的停笔问题就与这个区别有关。</p></details>
+</section>
+<section id="gpt"><p class="eyebrow">03 · 原理 · 30 分钟</p><h2>注意力看前文，输出层给下一个字打分</h2>
+<p>Karpathy 的 <a href="https://karpathy.github.io/2026/02/12/microgpt/">microGPT</a> 把整套计算压缩在一个纯 Python 文件里。本课程的 <a href="../tangshi/model.py">PyTorch 教学实现</a> 让你在同一段代码里找到对应部件。</p>
+<ol>
+<li><strong>Embedding</strong> 把字的编号查成向量，加上所在位置的向量。</li>
+<li><strong>因果注意力</strong> 用查询 Q、键 K、值 V 从当前位置及更早的字符里聚合信息。训练时遮住右边，避免提前看到答案。</li>
+<li><strong>MLP 和残差</strong> 对每个位置的向量再做变换，把变换后的结果加回原向量。多个 Block 可以堆叠。</li>
+<li><strong>输出与损失</strong> 输出层给词表每个字一个分数。交叉熵衡量模型给真实下一字的概率，反向传播计算参数应往哪里改。</li>
+</ol>
+<div class="callout"><p>一处真实下一字的概率从 0.10 提高到 0.50，损失 −ln(p) 约从 2.30 降到 0.69。预测更准时，这一处损失更低。</p></div>
+<details><summary>练习与答案</summary><p>「月下聞」里，「下」这一位置能用「聞」算注意力吗？不能。它要预测右侧的「聞」，只可以看自己及左边的「月」。</p></details>
+</section>
+<section id="train"><p class="eyebrow">04 · 从头训练 · 27 分钟</p><h2>让一个小 GPT 学会续写</h2>
+<p>每步抽一小批诗，前向计算损失，反向求梯度，AdamW 更新权重。课堂版先去精确重复，再固定种子留出验证诗。保持验证诗只用于观察。</p>
+<pre><code>python -m tangshi train --data runs/lesson-data/tangshi_clean.txt --limit 2000 --context 48 --width 64 --layers 2 --steps 200 --output runs/student.pt
+python -m tangshi generate --weights runs/student.pt --form five --seed 42</code></pre>
+<p>启动时会列出可用诗篇和词表，训练结束打印验证损失并保存权重。课堂权重还包含模型结构和词表。200 步用来观察流程，输出仍会生涩。</p>
+<h3>练习</h3><p>用同一语料和种子，另做 50 步和 200 步。记录训练损失、验证损失和同一个种子的诗。分别保存到不同文件。</p>
+<details><summary>判断提示</summary><p>训练损失下降说明模型更贴合抽到的样本。若验证损失上升，要留意泛化退步。即使两者都降，仍需直接读诗，判断人物、场景和收束是否连贯。</p></details>
+</section>
+<section id="scale"><p class="eyebrow">05 · 层数、宽度与硬件 · 20 分钟</p><h2>多堆几层和加宽向量是两种改法</h2>
+<p><strong>层数</strong>是 Block 的数量。<strong>宽度</strong>是每个位置向量的长度。<strong>头数</strong>决定注意力分成几路。一次实验只改变主要变量，记下步数、数据量和验证表现。</p>
+<pre><code>python -m tangshi train --limit 2000 --context 48 --width 64 --layers 4 --steps 200 --output runs/student-depth4.pt</code></pre>
+<p>Mac 的课堂入口可以用 PyTorch MPS。项目的进阶实验使用 M5 Pro 上的 MLX 和 BF16。若想查看实际宽度实验的训练入口，见 <a href="../advanced/README.md">MLX 进阶说明</a>。</p>
+<div class="table-wrap"><table><thead><tr><th>历史从头对照</th><th>参数量</th><th>李白测试正文损失</th></tr></thead><tbody>
+<tr><td>128 维 · 6 层</td><td>约 360 万</td><td>4.726</td></tr><tr><td>256 维 · 6 层</td><td>约 955 万</td><td>4.588</td></tr><tr><td>512 维 · 6 层</td><td>约 2,855 万</td><td>4.775</td></tr>
+</tbody></table></div>
+<p>三者使用同批次流程。上表的 512 维是从头对照结果，课程随附的 512 维文件又做过续训。比较历史结果时先看清是哪个检查点。<a href="../experiments/scratch_width_mlx_20261106/width512_blind/实验报告.md">宽度实验</a></p>
+</section>
+<section id="sample"><p class="eyebrow">06 · 推理 · 18 分钟</p><h2>抽一个字，接回前文，再继续抽</h2>
+<p>推理时逐字抽样，权重保持原样。降低温度通常会让分布更集中。固定种子可以把同一环境中的抽样过程重放。自然模式由模型决定何时遇到结束符，定长模式由程序限制每句字数并放入标点。</p>
+<pre><code>python -m tangshi generate --weights weights/model_base.pt --prompt 月下聞松聲 --form five --seed 42
+python -m tangshi generate --weights weights/more_2400_li.safetensors --prompt 月下聞松聲 --form natural --seed 42</code></pre>
+<details><summary>练习与答案</summary><p>用相同权重比较温度 0.4 和 0.9。低温通常更偏向高分字符，也可能更重复。固定五言四句只验证字数和标点约束，押韵、平仄、立意需要另查。</p></details>
+</section>
+<section id="adapt"><p class="eyebrow">07 · 后训练与对照 · 25 分钟</p><h2>从已有权重开始，用新目标继续学习</h2>
+<p>后训练从已保存模型出发，用选定语料和较小学习率更新。模型结构和词表保持与父权重一致。为了比较后训练前后，留住两份文件，在同样的题目与种子下生成。</p>
+<pre><code>python -m tangshi train --init runs/student.pt --data data/tangshi_李白.txt --steps 100 --lr 0.0001 --output runs/student-li.pt
+python -m tangshi generate --weights runs/student-li.pt --form five --seed 42</code></pre>
+<p>数据中的「李白」来自上游署名。教学程序会报告因词表不覆盖而跳过的诗。想比较两版，请用双方词表都覆盖的题目，把模型名隐藏后再读。历史权重始终留在 <code>weights/</code>。</p>
+<h3>练习</h3><p>定两道没用于调参的新题，每道用两个种子。给每首记录三个独立判断：人物行动接得上吗，情绪有推进吗，结尾有收束吗？允许难分。最后才揭晓来源。</p>
+</section>
+<section id="case"><p class="eyebrow">08 · 项目复盘 · 22 分钟</p><h2>唐诗 GPT 做成了，李白 GPT 没有过线</h2>
+<p>历史项目从 Karpathy 的名字生成改成唐诗续写，随后试了扩层、加宽、李白后训练、情志句加权、直接权重探针，以及先构思再写。不同实验的训练数据和指标各自有边界。</p>
+<div class="table-wrap"><table><thead><tr><th>实验</th><th>课堂上可检验的结果</th></tr></thead><tbody>
+<tr><td>结束符监督</td><td>修正后有模型能在句末自行停笔。</td></tr>
+<tr><td>专项前的 512 维</td><td>最后两批相关盲评分别相对胜出 7/24；256 维各 4/24。</td></tr>
+<tr><td>选诗上限</td><td>72 首中 3 首同时过行动、情绪和结尾门槛。6 题无一在两批均过线。</td></tr>
+<tr><td>构思条件训练</td><td>换人物选择后文字变了，6 题无一在两种子下完整跟随两种选择。</td></tr>
+</tbody></table></div>
+<p><strong>项目结论</strong> · 能生成唐诗形式的草稿，还不能稳定写出李白风格。固定文本损失、形式合格和文学质量要分开报告。课上盲评为小样本，历史文学评分也由同一助手完成。<a href="历史结案记录.md">项目结案与实验索引</a></p>
+<div class="callout"><p><strong>课末交付</strong> · 一份你训练的权重、一首可复现的续诗、一页实验记录。写出你的验收门槛和一个没有达到门槛的反例。</p></div>
+</section>
+<section id="sources"><p class="eyebrow">资料</p><h2>代码、权重与出处</h2>
+<ul><li><a href="../README.md">项目安装与命令总览</a></li><li><a href="../weights/README.md">历史权重与校验</a></li><li><a href="https://gist.github.com/karpathy/8627fe009c40f57531cb18360106ce95">Karpathy microGPT 原始 Gist</a></li><li><a href="https://github.com/chinese-poetry/chinese-poetry">chinese-poetry 上游语料</a></li><li><a href="来源与发布.md">素材来源与 GitHub 发布说明</a></li></ul>
+</section>
+</main></div>
+<footer>从 microGPT 到唐诗 GPT · 教学与研究记录 · 2026 年 11 月</footer>
+<script>
+document.documentElement.classList.add('js');
+document.querySelectorAll('pre').forEach(pre=>{
+ const box=document.createElement('div');box.className='codebox';pre.before(box);box.append(pre);
+ const button=document.createElement('button');button.className='copy';button.type='button';button.textContent='复制';box.append(button);
+ button.addEventListener('click',async()=>{
+   const text=pre.querySelector('code').textContent;
+   try{await navigator.clipboard.writeText(text);button.textContent='已复制';}
+   catch{const range=document.createRange();range.selectNodeContents(pre);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);button.textContent='已选中';}
+   setTimeout(()=>button.textContent='复制',1400);
+ });
+});
+</script>
+</body></html>

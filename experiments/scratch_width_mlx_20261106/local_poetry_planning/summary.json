@@ -1,0 +1,52 @@
+{
+  "direct": {
+    "wins": 6,
+    "valid_form": 7,
+    "mean": [
+      1.0833333333333333,
+      0.8333333333333334,
+      1.0833333333333333
+    ],
+    "replicated_at_2": [
+      [],
+      [],
+      []
+    ],
+    "replicated_joint": [],
+    "overlap8": {}
+  },
+  "planned": {
+    "wins": 5,
+    "valid_form": 8,
+    "mean": [
+      1,
+      1,
+      0.75
+    ],
+    "replicated_at_2": [
+      [
+        "辭聘還山"
+      ],
+      [],
+      []
+    ],
+    "replicated_joint": [],
+    "overlap8": {}
+  },
+  "gate_pass": false,
+  "ties": 1,
+  "paired_winners": {
+    "1-1": "planned",
+    "1-2": "direct",
+    "2-1": "direct",
+    "2-2": "direct",
+    "3-1": "direct",
+    "3-2": "planned",
+    "4-1": "planned",
+    "4-2": "direct",
+    "5-1": "planned",
+    "5-2": "direct",
+    "6-1": "tie",
+    "6-2": "planned"
+  }
+}

@@ -1,0 +1,450 @@
+{
+  "topics": [
+    {
+      "title": "寒渡留人",
+      "seeds": [
+        {
+          "seed": 473758,
+          "ratings": {
+            "choice1": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "choice2": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "title": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "poems": {
+            "title": "陽春冬月送，春色還家春。綠蘿人絕去，空山遙見別。",
+            "choice1": "魚躍白鷺飛，日落誰迴雨。歲江乘此腸，莫向雁海風。",
+            "choice2": "願見伍胥高，一遇齊流水。此翁今日月，何日重生光。"
+          },
+          "action_flip": false,
+          "emotion_flip": false,
+          "end_flip": false,
+          "joint_flip": false
+        },
+        {
+          "seed": 870088,
+          "ratings": {
+            "choice2": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "title": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "choice1": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "poems": {
+            "title": "江湖弄彩色，舟爾泛泛舟。醉明三湘去，依稀草草綠。",
+            "choice1": "乘浪去去來，日西江去生。柳如愁色似，今朝醉金樽。",
+            "choice2": "一水晶天明，日西歸浦轉。明年同途自，一見此道有。"
+          },
+          "action_flip": false,
+          "emotion_flip": false,
+          "end_flip": false,
+          "joint_flip": false
+        }
+      ]
+    },
+    {
+      "title": "郡門薦書",
+      "seeds": [
+        {
+          "seed": 473895,
+          "ratings": {
+            "title": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "choice2": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "choice1": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "poems": {
+            "title": "吳王臺殿生淥水，從道還鄉多少年。太子一迴薄澹蕩，心閑坐起愁高飛。",
+            "choice1": "六極別稷未終七，天高至恩何在誰。大火合開行將軍，百戰士身不顧玉。",
+            "choice2": "南登極北湖南山，北震煙霧氣白猨。大笑三春色白猨，秋草秋霜雪襟懷。"
+          },
+          "action_flip": false,
+          "emotion_flip": false,
+          "end_flip": false,
+          "joint_flip": false
+        },
+        {
+          "seed": 870225,
+          "ratings": {
+            "choice2": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "choice1": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "title": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "poems": {
+            "title": "水作青春色裏雪，大江流水無春秋。夜夜長不歸去長，光陰出處不去絕。",
+            "choice1": "六極去去矣此還，衣素手沙洲渚秋。時倚淚盡日西飛，飛飛燕蹄三五陵。",
+            "choice2": "謝南來中秋秋水，李多日月西時節。流水不滅半夜飲，一酌流霞山下秋。"
+          },
+          "action_flip": false,
+          "emotion_flip": false,
+          "end_flip": false,
+          "joint_flip": false
+        }
+      ]
+    },
+    {
+      "title": "春浦辭友",
+      "seeds": [
+        {
+          "seed": 474032,
+          "ratings": {
+            "choice2": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "title": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "choice1": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "poems": {
+            "title": "湖闊雪如雨，平羌竽楚風。行應見客見，一舉傾吳吹。",
+            "choice1": "山翁雲水無，夜郎獨宿寒。此地高樓月，獨立沙上客。",
+            "choice2": "空山雲色連，望斷處處處。湘江夜到長，何處是客亭。"
+          },
+          "action_flip": false,
+          "emotion_flip": false,
+          "end_flip": false,
+          "joint_flip": false
+        },
+        {
+          "seed": 870362,
+          "ratings": {
+            "choice1": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "title": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "choice2": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "poems": {
+            "title": "峨眉山月半，月明凋滿山。閑坐城闕上，獨坐覺邊方。",
+            "choice1": "山陰日照清，江分下送君。風景人來借，獨泛行行神。",
+            "choice2": "湖搖海月愁，湖光搖碧山。臨水不迴日，腸斷逐流星。"
+          },
+          "action_flip": false,
+          "emotion_flip": false,
+          "end_flip": false,
+          "joint_flip": false
+        }
+      ]
+    },
+    {
+      "title": "烽火山關",
+      "seeds": [
+        {
+          "seed": 474169,
+          "ratings": {
+            "choice2": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "choice1": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "title": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "poems": {
+            "title": "越王句踐難當天，湘馳殺人莫測兵。一飲五月霜海月，一書傳我奏天星。",
+            "choice1": "胡塵昏霧靜落日，漢鼙寒樹羽林中。一起孤客絕世聞，一意傷心已盡心。",
+            "choice2": "胡地無知鵰巾下，無鼻有樂親知寶。四通安一氣不見，一戰亂溝中甲子。"
+          },
+          "action_flip": false,
+          "emotion_flip": false,
+          "end_flip": false,
+          "joint_flip": false
+        },
+        {
+          "seed": 870499,
+          "ratings": {
+            "choice1": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "title": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "choice2": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "poems": {
+            "title": "天門長歎息心傳，湘川一行萬古萬。惆悵更何時已老，欲向吳江去穹舊。",
+            "choice1": "君子期聞呌沙戰，征人驚貴翻木瓜。一戰已合千金銀，天兵一朝安青麟。",
+            "choice2": "嚴霜師當壯士悲，胡地多時無朔雁。一弟能不知洛陽，寒地多少壯士黨。"
+          },
+          "action_flip": false,
+          "emotion_flip": false,
+          "end_flip": false,
+          "joint_flip": false
+        }
+      ]
+    },
+    {
+      "title": "松院訪師",
+      "seeds": [
+        {
+          "seed": 474306,
+          "ratings": {
+            "choice2": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "title": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "choice1": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "poems": {
+            "title": "話我年空十，遊人間塵頭。白髮四五五，几杖當中老。",
+            "choice1": "白鷺洲中夜，月明秋月落。白鷗還一去，不出海潮歸。",
+            "choice2": "花木五月光，門前戰虎高。飛鳥塞中書，不及虎溪田。"
+          },
+          "action_flip": false,
+          "emotion_flip": false,
+          "end_flip": false,
+          "joint_flip": false
+        },
+        {
+          "seed": 870636,
+          "ratings": {
+            "title": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "choice2": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "choice1": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "poems": {
+            "title": "洞庭雲夢長，上揚行後霜。此行思何長，此中歎嗟嗟。",
+            "choice1": "白鷺洲中鳥，暮雨草蛾蛾。客心絕世道，何似到天明。",
+            "choice2": "無事重尋隱，晚尋野家空。白雲愁色遠，到我何處是。"
+          },
+          "action_flip": false,
+          "emotion_flip": false,
+          "end_flip": false,
+          "joint_flip": false
+        }
+      ]
+    },
+    {
+      "title": "驛燈寄札",
+      "seeds": [
+        {
+          "seed": 474443,
+          "ratings": {
+            "title": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "choice2": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "choice1": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "poems": {
+            "title": "小人歌一呼何處，有誰開緘客面面。無端通曙出天上，天涯夜夜長愁不。",
+            "choice1": "太白無何從事從，大多高者有風霜。直向萬人前有傳，一物萬乘歸去長。",
+            "choice2": "成古出吳思下白，大愁稱楚楚風流。山花落帽三千丈，江水無心空斷流。"
+          },
+          "action_flip": false,
+          "emotion_flip": false,
+          "end_flip": false,
+          "joint_flip": false
+        },
+        {
+          "seed": 870773,
+          "ratings": {
+            "choice1": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "title": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "choice2": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "poems": {
+            "title": "北堂西望愁長望，誰念無愁夜郎愁。夜坐寒燈連曉月，爲君吹柳步長樓。",
+            "choice1": "嚴將木瓜天近遠，高作霜酬地秋月。一朝秋草入秋山，夜見寒山月下沒。",
+            "choice2": "天地有端征西情，飛猨在遠客西成。何事可迴相識同，江色深山對落花。"
+          },
+          "action_flip": false,
+          "emotion_flip": false,
+          "end_flip": false,
+          "joint_flip": false
+        }
+      ]
+    }
+  ],
+  "repeated_flips": {
+    "action": [],
+    "emotion": [],
+    "end": [],
+    "joint": []
+  },
+  "changed_text_pairs": 12,
+  "arms": {
+    "title": {
+      "poetry_mean": 0.08333333333333333,
+      "action_paths": {
+        "0": 12
+      },
+      "overlap8": {}
+    },
+    "choice1": {
+      "poetry_mean": 0.3333333333333333,
+      "action_paths": {
+        "0": 12
+      },
+      "overlap8": {}
+    },
+    "choice2": {
+      "poetry_mean": 0.3333333333333333,
+      "action_paths": {
+        "0": 12
+      },
+      "overlap8": {}
+    }
+  },
+  "poetry_plan_average": 0.3333333333333333,
+  "pass": false
+}

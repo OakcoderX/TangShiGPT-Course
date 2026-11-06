@@ -1,0 +1,133 @@
+{
+  "wins": {
+    "tie": 15,
+    "256": 5,
+    "512": 2,
+    "128": 2
+  },
+  "dimensions": {
+    "128": {
+      "emotion": {
+        "mean": 0.5416666666666666,
+        "distribution": {
+          "1": 11,
+          "0": 12,
+          "2": 1
+        },
+        "both_seeds_at_2": []
+      },
+      "stance": {
+        "mean": 0.4583333333333333,
+        "distribution": {
+          "1": 11,
+          "0": 13
+        },
+        "both_seeds_at_2": []
+      },
+      "li_style": {
+        "mean": 0.4166666666666667,
+        "distribution": {
+          "0": 14,
+          "1": 10
+        },
+        "both_seeds_at_2": []
+      }
+    },
+    "256": {
+      "emotion": {
+        "mean": 0.6666666666666666,
+        "distribution": {
+          "0": 11,
+          "1": 10,
+          "2": 3
+        },
+        "both_seeds_at_2": []
+      },
+      "stance": {
+        "mean": 0.5833333333333334,
+        "distribution": {
+          "1": 12,
+          "0": 11,
+          "2": 1
+        },
+        "both_seeds_at_2": []
+      },
+      "li_style": {
+        "mean": 0.75,
+        "distribution": {
+          "0": 6,
+          "1": 18
+        },
+        "both_seeds_at_2": []
+      }
+    },
+    "512": {
+      "emotion": {
+        "mean": 0.4583333333333333,
+        "distribution": {
+          "0": 14,
+          "1": 9,
+          "2": 1
+        },
+        "both_seeds_at_2": []
+      },
+      "stance": {
+        "mean": 0.4583333333333333,
+        "distribution": {
+          "1": 11,
+          "0": 13
+        },
+        "both_seeds_at_2": []
+      },
+      "li_style": {
+        "mean": 0.6666666666666666,
+        "distribution": {
+          "1": 14,
+          "0": 9,
+          "2": 1
+        },
+        "both_seeds_at_2": []
+      }
+    }
+  },
+  "same_topic_repeat": {
+    "孤鴻下遠沙": 256,
+    "高樓醉看星河落": 512
+  },
+  "by_seed": {
+    "1": {
+      "tie": 8,
+      "256": 3,
+      "512": 1
+    },
+    "2": {
+      "tie": 7,
+      "128": 2,
+      "256": 2,
+      "512": 1
+    }
+  },
+  "generation": {
+    "128": {
+      "at_sentence_end": 24,
+      "format_complete": 23,
+      "fixed_overlap8": 0,
+      "natural_overlap8": 0,
+      "total": 24
+    },
+    "256": {
+      "at_sentence_end": 24,
+      "format_complete": 19,
+      "fixed_overlap8": 0,
+      "natural_overlap8": 0,
+      "total": 24
+    },
+    "512": {
+      "at_sentence_end": 24,
+      "format_complete": 23,
+      "fixed_overlap8": 0,
+      "natural_overlap8": 0,
+      "total": 24
+    }
+  }
+}

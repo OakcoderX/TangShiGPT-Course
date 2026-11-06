@@ -1,0 +1,258 @@
+{
+  "source_sha256": "abff35d3eef7ad6e535619869a2afc82a0b61232d07642da94efed3abe0e1185",
+  "split_sha256": "67af84056586356449b2e3bfaa074606a3e0af6180297e53e4b9e7df8d714ac8",
+  "base_sha256": "36e7ff84f196f7a485f4fd579c92d4ab06d1c71c81f77cba37e759c9c813325d",
+  "device": {
+    "device_name": "Apple M5 Pro",
+    "max_recommended_working_set_size": 55662788608,
+    "memory_size": 68719476736,
+    "architecture": "applegpu_g17s",
+    "max_buffer_length": 41747087360,
+    "resource_limit": 499000
+  },
+  "mlx": "0.32.2",
+  "rate": 0.0003,
+  "start_added_steps": 3600,
+  "baseline_style_dev": {
+    "other": {
+      "body_nll": 4.675914755929284,
+      "end_nll": 0.47768118530511855,
+      "poems": 320,
+      "tokens": 16204
+    },
+    "li": {
+      "body_nll": 4.503945640023442,
+      "end_nll": 0.7106220750247731,
+      "poems": 85,
+      "tokens": 5039
+    }
+  },
+  "runs": {
+    "more_1200": {
+      "added": 1200,
+      "general": {
+        "seconds": 33.41115525003988,
+        "tokens": 1950560,
+        "steps": 1200,
+        "dev": {
+          "other": {
+            "body_nll": 4.564418968816534,
+            "end_nll": 0.4811601459980011,
+            "poems": 320,
+            "tokens": 16204
+          },
+          "li": {
+            "body_nll": 4.530690085109582,
+            "end_nll": 0.6539659219629624,
+            "poems": 85,
+            "tokens": 5039
+          }
+        },
+        "sha256": "265a4862c2c6df7c84ee5ef4f73ecdc6f04bebc82c25435762a2766129c8fe26"
+      },
+      "style": {
+        "seconds": 16.897449583979324,
+        "tokens": 635470,
+        "steps": 360,
+        "dev": {
+          "other": {
+            "body_nll": 4.6650847447003825,
+            "end_nll": 0.4636531211435795,
+            "poems": 320,
+            "tokens": 16204
+          },
+          "li": {
+            "body_nll": 4.503593649223556,
+            "end_nll": 0.6897709818447337,
+            "poems": 85,
+            "tokens": 5039
+          }
+        },
+        "dev_objective": 4.584339196961969,
+        "sha256": "5ecb622363bd67a59881baeec494b3d0b45e2489249aac1eb138ef8e250576ca"
+      }
+    },
+    "more_2400": {
+      "added": 2400,
+      "general": {
+        "seconds": 35.9366206250852,
+        "tokens": 1969405,
+        "steps": 1200,
+        "dev": {
+          "other": {
+            "body_nll": 4.549094067123665,
+            "end_nll": 0.33455768451094625,
+            "poems": 320,
+            "tokens": 16204
+          },
+          "li": {
+            "body_nll": 4.517970426377381,
+            "end_nll": 0.4259984998142018,
+            "poems": 85,
+            "tokens": 5039
+          }
+        },
+        "sha256": "80d21e74560215fc728ff213c9a3c0fda59b632210963596d2917eb8fb380a08"
+      },
+      "style": {
+        "seconds": 19.336543500074185,
+        "tokens": 635470,
+        "steps": 360,
+        "dev": {
+          "other": {
+            "body_nll": 4.66179678640787,
+            "end_nll": 0.46424333527684214,
+            "poems": 320,
+            "tokens": 16204
+          },
+          "li": {
+            "body_nll": 4.504443538640789,
+            "end_nll": 0.7247616291046143,
+            "poems": 85,
+            "tokens": 5039
+          }
+        },
+        "dev_objective": 4.583120162524329,
+        "sha256": "340b33beeeabc215968f3f12fa74f14ebfd41668e95b01de3c9ee8d2aa995c30"
+      }
+    },
+    "more_3600": {
+      "added": 3600,
+      "general": {
+        "seconds": 36.09514966595452,
+        "tokens": 1990562,
+        "steps": 1200,
+        "dev": {
+          "other": {
+            "body_nll": 4.546721922441989,
+            "end_nll": 0.4084497638046741,
+            "poems": 320,
+            "tokens": 16204
+          },
+          "li": {
+            "body_nll": 4.524917581342094,
+            "end_nll": 0.6305975914001465,
+            "poems": 85,
+            "tokens": 5039
+          }
+        },
+        "sha256": "7822c5fa1020b26e73ab006ed406dda95137850fb656f87d347fc7f6c705b7f2"
+      },
+      "style": {
+        "seconds": 18.666469290968962,
+        "tokens": 635470,
+        "steps": 360,
+        "dev": {
+          "other": {
+            "body_nll": 4.673375491535655,
+            "end_nll": 0.46707059592008593,
+            "poems": 320,
+            "tokens": 16204
+          },
+          "li": {
+            "body_nll": 4.534239329712617,
+            "end_nll": 0.7673580562367158,
+            "poems": 85,
+            "tokens": 5039
+          }
+        },
+        "dev_objective": 4.603807410624135,
+        "sha256": "927111095a16e571572d4f5f4d8957b6d4d057c36f4fa24cf873919eef6f5361"
+      }
+    },
+    "more_4800": {
+      "added": 4800,
+      "general": {
+        "seconds": 37.6929404590046,
+        "tokens": 1950401,
+        "steps": 1200,
+        "dev": {
+          "other": {
+            "body_nll": 4.574488157462085,
+            "end_nll": 0.2977202035486698,
+            "poems": 320,
+            "tokens": 16204
+          },
+          "li": {
+            "body_nll": 4.537492228585781,
+            "end_nll": 0.4461483730989344,
+            "poems": 85,
+            "tokens": 5039
+          }
+        },
+        "sha256": "b672778a41d6011de116900d6da08963979c78cdc4b94b11ff8df878789d7df7"
+      },
+      "style": {
+        "seconds": 19.827035124995746,
+        "tokens": 635470,
+        "steps": 360,
+        "dev": {
+          "other": {
+            "body_nll": 4.693192707288709,
+            "end_nll": 0.47743587046861646,
+            "poems": 320,
+            "tokens": 16204
+          },
+          "li": {
+            "body_nll": 4.545606888341251,
+            "end_nll": 0.7787969561184154,
+            "poems": 85,
+            "tokens": 5039
+          }
+        },
+        "dev_objective": 4.61939979781498,
+        "sha256": "623ed3d777577e8680aa7abbc413f7cc5d37a6d7a78d87e7ace5035aac5c4e5a"
+      }
+    }
+  },
+  "selected": "more_2400",
+  "style": {
+    "seconds": 19.336543500074185,
+    "tokens": 635470,
+    "steps": 360,
+    "dev": {
+      "other": {
+        "body_nll": 4.66179678640787,
+        "end_nll": 0.46424333527684214,
+        "poems": 320,
+        "tokens": 16204
+      },
+      "li": {
+        "body_nll": 4.504443538640789,
+        "end_nll": 0.7247616291046143,
+        "poems": 85,
+        "tokens": 5039
+      }
+    },
+    "dev_objective": 4.583120162524329,
+    "sha256": "340b33beeeabc215968f3f12fa74f14ebfd41668e95b01de3c9ee8d2aa995c30",
+    "test": {
+      "other": {
+        "body_nll": 4.636957524731807,
+        "end_nll": 0.45646182615309955,
+        "poems": 320,
+        "tokens": 16243
+      },
+      "li": {
+        "body_nll": 4.696336743164062,
+        "end_nll": 0.9074591468362248,
+        "poems": 85,
+        "tokens": 5000
+      }
+    }
+  },
+  "general_test": {
+    "other": {
+      "body_nll": 4.525130574576837,
+      "end_nll": 0.31923759877681734,
+      "poems": 320,
+      "tokens": 16243
+    },
+    "li": {
+      "body_nll": 4.71385830078125,
+      "end_nll": 0.5416528140797334,
+      "poems": 85,
+      "tokens": 5000
+    }
+  }
+}
