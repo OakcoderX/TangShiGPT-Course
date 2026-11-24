@@ -145,3 +145,11 @@ Format check in this run: supplied **4/4** and student **2/2** met their request
 The command paths were run from both the checked-out source and an extracted v1.0.0 release ZIP on Linux x86-64 CPU with Python 3.12.14, PyTorch 2.6.0+cpu, NumPy 1.26.4 and safetensors 0.5.3, using [this tested source revision](https://github.com/OakcoderX/TangShiGPT-Course/tree/6a5b74b44673ef3645825829bb6837ddd4844525). Supplied checkpoint SHA-256: `340b33beeeabc215968f3f12fa74f14ebfd41668e95b01de3c9ee8d2aa995c30`. The English readings are teaching glosses, not published translations. The installation paths for macOS and Windows were not separately run for this edition.
 
 Inspired by [Andrej Karpathy's microgpt](https://karpathy.github.io/2026/02/12/microgpt/); the project uses its own PyTorch implementation and is not an official Karpathy course. The electronic [chinese-poetry](https://github.com/chinese-poetry/chinese-poetry) collection retains its [MIT notice](../data/LICENSE.chinese-poetry). It is not a critical edition. This project's code, course and weights are available to download and study; no additional open-source license is supplied for them. [Source and release notes](来源与发布.md).
+
+## Listed on
+
+<a href="https://aisotools.com/tool/tangshigpt-course" rel="nofollow"><img src="https://aisotools.com/badges/aiso-featured-basic.svg" alt="TangShiGPT-Course listed on AISO Tools" width="176"></a>
+
+**Learning and project directories:** [AI Learn Nav](https://ailearnnav.com/en/resource/tangshigpt-course) · [AINavDir](https://www.ainavdir.com/tool/tangshigpt-course) · [Indie CN](https://dev.summhub.com/en/p/tangshigpt-course-%E4%BB%8E-microgpt-%E5%88%B0%E5%94%90%E8%AF%97-gpt)
+
+These links document listings, not endorsements. Some directory entries still describe only the original Chinese course.
