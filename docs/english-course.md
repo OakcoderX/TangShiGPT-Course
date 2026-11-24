@@ -78,6 +78,10 @@ python -m tangshi generate --device cpu --weights weights/more_2400_li.safetenso
 
 Natural mode stops at a learned end token or the length limit. This run returned `江上送故人，相思離遠客。白雲送明月，相憶不能去。`: four five-character lines by the shape check, **without** the seven-character rule. A single natural sample is not evidence that it always does this. The five- and seven-character modes enforce four lines and the punctuation pattern. Four neat lines don't prove the model learned rhyme, strict prosody, coherence, or a poet’s style.
 
+**Spot the echo:** Find 送 in `江上送故人` (“see an old friend off by the river”) and again in `白雲送明月`. We supplied the five characters in the first line; the model sampled its comma and every character of the third line. With 白雲 (“white clouds”) and 明月 (“bright moon”), one reading is “White clouds see the bright moon off.” You can check the image and the echo without knowing Chinese. This doesn’t tell us whether the model intended the echo or borrowed a phrase from the corpus.
+
+**Compare like with like:** Use sample 1 from each run (the first seven-character sample is in the appendix), or set `--count 1` in both commands. The translated opener was sample 4. `--seed` initializes the sampler once per command, so different sample positions have different draw histories. Holding the checkpoint, prompt, seed, temperature and device fixed compares the modes as a bundle: their candidate rules, punctuation and stopping differ.
+
 ## 3. Count which character comes next
 
 Imagine a toy archive containing `月明`, `月明`, and `月下`. The symbol after 月 is 明 twice and 下 once: 2/3 and 1/3. 月 often means moon, but counting doesn't need that meaning. This course treats characters as tokens; it does not assume they work like letters in English.
@@ -115,7 +119,7 @@ Keep your first four supplied-checkpoint samples and first two student samples, 
 
 Record yes, no, or uncertain and keep the number of samples visible. The two runs use different checkpoints and different settings. They are a demonstration, not a controlled comparison. For a cleaner comparison, first match the prompt, form, temperature and number of samples across both models; use no prompt if the small vocabulary does not support it. Record the seed and settings, and then change just one of them. If possible, hide which model generated which sample before judging clarity. The upstream experiments generated Tang-form drafts but did **not** establish reliable Li Bai imitation.
 
-**Finish:** Save a command you ran, the original output, your English reading, and one thing you couldn't verify. If you didn't train or generate locally, label your result “translation-only.” Share only non-private samples, with the versions and exact command. The [Chinese companion course](index.html) has more experiments; you don't need it to complete this one.
+**Finish:** Save a command you ran, the original output, your English reading, and one thing you couldn't verify. If you didn't train or generate locally, label your result “translation-only.” Share only non-private samples, with the versions and exact command. For the optional Chinese companion, open `docs/index.html` in a browser after extracting the [learning ZIP](https://github.com/OakcoderX/TangShiGPT-Course/releases/download/v1.0.0/TangShiGPT-Course.zip). You don't need it to complete this course.
 
 ## Reproduction and credits
 
