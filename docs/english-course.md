@@ -149,7 +149,8 @@ Inspired by [Andrej Karpathy's microgpt](https://karpathy.github.io/2026/02/12/m
 ## Listed on
 
 <a href="https://aisotools.com/tool/tangshigpt-course" rel="nofollow"><img src="https://aisotools.com/badges/aiso-featured-basic.svg" alt="TangShiGPT-Course listed on AISO Tools" width="176"></a>
+<a href="https://www.ainavdir.com/tool/tangshigpt-course" rel="nofollow"><img src="https://www.ainavdir.com/badges/listed-on-ainavdir.svg" alt="TangShiGPT-Course listed on AINavDir" width="176"></a>
 
-**Learning and project directories:** [AI Learn Nav](https://ailearnnav.com/en/resource/tangshigpt-course) · [AINavDir](https://www.ainavdir.com/tool/tangshigpt-course) · [Indie CN](https://dev.summhub.com/en/p/tangshigpt-course-%E4%BB%8E-microgpt-%E5%88%B0%E5%94%90%E8%AF%97-gpt)
+**Learning and project directories:** [AI Learn Nav](https://ailearnnav.com/en/resource/tangshigpt-course) · [Indie CN](https://dev.summhub.com/en/p/tangshigpt-course-%E4%BB%8E-microgpt-%E5%88%B0%E5%94%90%E8%AF%97-gpt) · [DevTrends](https://devtrends.site/en/projects/oakcoderx/tangshigpt-course/)
 
 These links document listings, not endorsements. Some directory entries still describe only the original Chinese course.
