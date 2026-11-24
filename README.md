@@ -55,7 +55,8 @@ python -m tangshi generate --weights runs/student.pt --form five --seed 42
 ## 已收录 / Listed on
 
 <a href="https://aisotools.com/tool/tangshigpt-course" rel="nofollow"><img src="https://aisotools.com/badges/aiso-featured-basic.svg" alt="TangShiGPT-Course listed on AISO Tools" width="176"></a>
+<a href="https://www.ainavdir.com/tool/tangshigpt-course" rel="nofollow"><img src="https://www.ainavdir.com/badges/listed-on-ainavdir.svg" alt="TangShiGPT-Course listed on AINavDir" width="176"></a>
 
-**学习与项目目录 / Learning and project directories:** [AI Learn Nav](https://ailearnnav.com/en/resource/tangshigpt-course) · [AINavDir](https://www.ainavdir.com/tool/tangshigpt-course) · [Indie CN](https://dev.summhub.com/en/p/tangshigpt-course-%E4%BB%8E-microgpt-%E5%88%B0%E5%94%90%E8%AF%97-gpt)
+**学习与项目目录 / Learning and project directories:** [AI Learn Nav](https://ailearnnav.com/en/resource/tangshigpt-course) · [Indie CN](https://dev.summhub.com/en/p/tangshigpt-course-%E4%BB%8E-microgpt-%E5%88%B0%E5%94%90%E8%AF%97-gpt) · [DevTrends](https://devtrends.site/en/projects/oakcoderx/tangshigpt-course/)
 
 收录不代表认证或推荐。部分目录仍只介绍原中文版；[英文动手课](docs/english-course.md)也已公开。
