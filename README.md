@@ -1,5 +1,7 @@
 # 从 microGPT 到唐诗 GPT
 
+[**English course: Train a tiny GPT to write Chinese poetry, without knowing Chinese**](docs/english-course.md)
+
 一套面向会一点 Python 的初学者的中文动手课。先把《全唐诗》的 JSON 变成模型可读的字符序列，再亲手训练、保存、加载一个小 GPT。最后用真实的李白风格实验练习设计对照和判断失败。
 
 **项目做成了能生成唐诗形式草稿的模型，李白风格仍不能稳定复现。**
