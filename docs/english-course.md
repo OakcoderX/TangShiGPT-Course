@@ -86,7 +86,17 @@ Natural mode stops at a learned end token or the length limit. This run returned
 
 ## 3. Count which character comes next
 
-Imagine a toy archive containing `月明`, `月明`, and `月下`. The symbol after 月 is 明 twice and 下 once: 2/3 and 1/3. 月 often means moon, but counting doesn't need that meaning. This course treats characters as tokens; it does not assume they work like letters in English.
+Before you run the commands: the counting script looks at every occurrence of `月` in the poems and tallies what follows it, including punctuation. The percentages are shares of those followers, not shares of the whole collection.
+
+Here’s a toy example you can check by eye. Give the counter three short lines:
+
+```text
+Input: 月明, 月明, 月下
+  → After 月: 明 twice (2/3), 下 once (1/3)
+  → Simple guess for the next token: 明
+```
+
+`月` often means moon, but you don't need its meaning to make this guess. The one-character count is a baseline; the GPT you train later can use several earlier tokens as context.
 
 ```sh
 python scripts/prepare_data.py
@@ -101,7 +111,7 @@ $env:PYTHONIOENCODING = 'utf-8'
 
 This sets Python’s [standard-stream encoding](https://docs.python.org/3.13/using/cmdline.html#envvar-PYTHONIOENCODING) for commands started from that window. It does not change the dataset. If the command runs but shows boxes instead of characters, try a terminal font that supports Chinese.
 
-The first command writes a clean copy to `runs/lesson-data/`, leaving the bundled source data untouched. Look for `JSON 记录 57607` (57,607 records) and `清洗后 56937` (56,937 cleaned lines). The second displays counts and percentages among the observed **successors of 月**, including punctuation and possibly the end marker. It is not counting shares of the entire collection. The recorded run saw the comma after 月 1,997 times (16.67%); the full stop was the most common successor of 山 (7.02%).
+The first command writes a clean copy to `runs/lesson-data/`, leaving the bundled source data untouched. Look for `JSON 记录 57607` (57,607 records) and `清洗后 56937` (56,937 cleaned lines). The second lists the common followers and can include the end-of-line marker. In the real corpus, the recorded run saw the comma after 月 1,997 times (16.67%); the full stop was the most common successor of 山 (7.02%).
 
 **Try it:** Change `--char 月` to `--char 山` (mountain). Do the most frequent followers change? Can that tell you the meaning of the full poem? This baseline uses one character at a time. GPT uses several earlier tokens as context to predict the next one, samples a character, appends it, and repeats.
 
