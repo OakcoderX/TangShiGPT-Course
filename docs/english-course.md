@@ -91,6 +91,14 @@ python scripts/prepare_data.py
 python scripts/next_char.py --data runs/lesson-data/tangshi_clean.txt --char 月
 ```
 
+**Windows PowerShell: `UnicodeEncodeError`?** If Python reports that `charmap` cannot encode the Chinese output, run this in the same PowerShell window, then retry the command that failed:
+
+```powershell
+$env:PYTHONIOENCODING = 'utf-8'
+```
+
+This sets Python’s [standard-stream encoding](https://docs.python.org/3.13/using/cmdline.html#envvar-PYTHONIOENCODING) for commands started from that window. It does not change the dataset. If the command runs but shows boxes instead of characters, try a terminal font that supports Chinese.
+
 The first command writes a clean copy to `runs/lesson-data/`, leaving the bundled source data untouched. Look for `JSON 记录 57607` (57,607 records) and `清洗后 56937` (56,937 cleaned lines). The second displays counts and percentages among the observed **successors of 月**, including punctuation and possibly the end marker. It is not counting shares of the entire collection. The recorded run saw the comma after 月 1,997 times (16.67%); the full stop was the most common successor of 山 (7.02%).
 
 **Try it:** Change `--char 月` to `--char 山` (mountain). Do the most frequent followers change? Can that tell you the meaning of the full poem? This baseline uses one character at a time. GPT uses several earlier tokens as context to predict the next one, samples a character, appends it, and repeats.
