@@ -10,6 +10,8 @@ Here the marks are real Chinese characters and the training material is an elect
 
 Choose a route: **just curious?** Do [the translation exercise](#1-read-a-result-before-installing-anything) on this page. **Want to build?** Work through all five sections. The supplied checkpoint download is only for section 2. You can skip it and train from the repository's bundled corpus in sections 3–4.
 
+<img src="assets/english-course-poster.jpg" alt="TangShi GPT poster: Train a tiny GPT. Read across time. No Chinese required. The character 月 appears inside a glass lens." width="380">
+
 ## 1. Read a result before installing anything
 
 This is sample 4 of 4 from an actual run of the **supplied** checkpoint. It did not come from our 200-step student model.
