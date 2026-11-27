@@ -98,18 +98,18 @@ Input: 月明, 月明, 月下
 
 `月` often means moon, but you don't need its meaning to make this guess. The one-character count is a baseline; the GPT you train later can use several earlier tokens as context.
 
-```sh
-python scripts/prepare_data.py
-python scripts/next_char.py --data runs/lesson-data/tangshi_clean.txt --char 月
-```
-
-**Windows PowerShell: `UnicodeEncodeError`?** If Python reports that `charmap` cannot encode the Chinese output, run this in the same PowerShell window, then retry the command that failed:
+**Windows PowerShell:** Both commands below print Chinese text. If either one reports a `UnicodeEncodeError` mentioning `charmap`, paste this into the same PowerShell window, then rerun the command that failed:
 
 ```powershell
 $env:PYTHONIOENCODING = 'utf-8'
 ```
 
 This sets Python’s [standard-stream encoding](https://docs.python.org/3.13/using/cmdline.html#envvar-PYTHONIOENCODING) for commands started from that window. It does not change the dataset. If the command runs but shows boxes instead of characters, try a terminal font that supports Chinese.
+
+```sh
+python scripts/prepare_data.py
+python scripts/next_char.py --data runs/lesson-data/tangshi_clean.txt --char 月
+```
 
 The first command writes a clean copy to `runs/lesson-data/`, leaving the bundled source data untouched. Look for `JSON 记录 57607` (57,607 records) and `清洗后 56937` (56,937 cleaned lines). The second lists the common followers and can include the end-of-line marker. In the real corpus, the recorded run saw the comma after 月 1,997 times (16.67%); the full stop was the most common successor of 山 (7.02%).
 
