@@ -47,7 +47,7 @@ If you don't have an AI translator, look for 故人 in two lines and find its gl
 
 ## 2. Run the supplied model
 
-Download the [v1.0.0 learning ZIP](https://github.com/OakcoderX/TangShiGPT-Course/releases/download/v1.0.0/TangShiGPT-Course.zip) (about 129 MiB), extract it, and open a terminal where `requirements.txt` and `tangshi/` are both visible. The ZIP predates this English edition; keep this page open for the lessons. If you prefer not to download the big checkpoint, [download the tested source ZIP](https://github.com/OakcoderX/TangShiGPT-Course/archive/6a5b74b44673ef3645825829bb6837ddd4844525.zip), set up Python below, and start at section 3. To run the supplied model from a source checkout, [download the supplied checkpoint](https://github.com/OakcoderX/TangShiGPT-Course/releases/download/v1.0.0/more_2400_li.safetensors) and put it in `weights/` next to `vocab.json`. [Weight files and checksums](../weights/README.md).
+Download the [v1.0.0 learning ZIP](https://github.com/OakcoderX/TangShiGPT-Course/releases/download/v1.0.0/TangShiGPT-Course.zip) (about 129 MiB), extract it, and open a terminal where `requirements.txt` and `tangshi/` are both visible. The ZIP predates this English edition; keep this page open for the lessons. If you prefer not to download the big checkpoint, [download the tested source ZIP](https://github.com/OakcoderX/TangShiGPT-Course/archive/6a5b74b44673ef3645825829bb6837ddd4844525.zip) and jump to [section 3](#3-count-which-character-comes-next). If you only want to count characters, you can skip the dependency setup below. To run the supplied model from a source checkout, [download the supplied checkpoint](https://github.com/OakcoderX/TangShiGPT-Course/releases/download/v1.0.0/more_2400_li.safetensors) and put it in `weights/` next to `vocab.json`. [Weight files and checksums](../weights/README.md).
 
 **macOS / Linux**
 
@@ -64,7 +64,7 @@ py -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
-On Windows, replace the leading `python` in each command below with `.\.venv\Scripts\python.exe`. If the Chinese appears garbled, try a UTF-8 terminal and a font that supports Chinese. If Python cannot find `tangshi`, check that you are in the extracted project directory, not its parent. If dependency installation fails, use [PyTorch's installation selector](https://pytorch.org/get-started/locally/) for your platform, then install the remaining requirements in the same environment. The examples below use CPU.
+On Windows, for the model commands in sections 2 and 4, replace the leading `python` with `.\.venv\Scripts\python.exe`. If the Chinese appears garbled, try a UTF-8 terminal and a font that supports Chinese. If Python cannot find `tangshi`, check that you are in the extracted project directory, not its parent. If dependency installation fails, use [PyTorch's installation selector](https://pytorch.org/get-started/locally/) for your platform, then install the remaining requirements in the same environment. The examples below use CPU.
 
 ```sh
 python -m tangshi generate --device cpu --weights weights/more_2400_li.safetensors --form seven --prompt "江上送故人" --seed 42 --temperature 0.65 --count 4
@@ -98,13 +98,17 @@ Input: 月明, 月明, 月下
 
 `月` often means moon, but you don't need its meaning to make this guess. The one-character count is a baseline; the GPT you train later can use several earlier tokens as context.
 
-**Windows PowerShell:** Both commands below print Chinese text. If either one reports a `UnicodeEncodeError` mentioning `charmap`, paste this into the same PowerShell window, then rerun the command that failed:
+**Windows PowerShell:** These counting and data-preparation commands print Chinese text. If a command reports a `UnicodeEncodeError` mentioning `charmap`, paste this into the same PowerShell window, then rerun it:
 
 ```powershell
 $env:PYTHONIOENCODING = 'utf-8'
 ```
 
 This sets Python’s [standard-stream encoding](https://docs.python.org/3.13/using/cmdline.html#envvar-PYTHONIOENCODING) for commands started from that window. It does not change the dataset. If the command runs but shows boxes instead of characters, try a terminal font that supports Chinese.
+
+**Try the counter first.** In the extracted project folder, use Python 3.10 or newer. You don't need PyTorch or a checkpoint for this step. Run `python scripts/next_char.py` (use `python3` or `py` if that's your Python 3.10+ command). It uses the bundled cleaned poems and already looks for 月, so you don't have to type Chinese.
+
+**If you're going on to train a model**, make a clean copy from the raw poems first. Both commands still use only Python's standard library:
 
 ```sh
 python scripts/prepare_data.py
@@ -116,6 +120,8 @@ The first command writes a clean copy to `runs/lesson-data/`, leaving the bundle
 **Try it:** Change `--char 月` to `--char 山` (mountain). Do the most frequent followers change? Can that tell you the meaning of the full poem? This baseline uses one character at a time. GPT uses several earlier tokens as context to predict the next one, samples a character, appends it, and repeats.
 
 ## 4. Train and reload your own model
+
+Before training, install the Python dependencies using [the setup in section 2](#2-run-the-supplied-model). You don't need to download the supplied checkpoint. If you only ran the quick count in section 3, run `python scripts/prepare_data.py` now to create the training file used below.
 
 ```sh
 python -m tangshi train --device cpu --seed 42 --data runs/lesson-data/tangshi_clean.txt --limit 2000 --context 48 --width 64 --layers 2 --steps 200 --output runs/english-student.pt
